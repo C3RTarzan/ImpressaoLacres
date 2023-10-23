@@ -1,0 +1,206 @@
+@import './global';
+
+body{
+    .nav{
+        position: relative;
+        width: 350px;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        overflow-y: scroll;
+        span{
+            margin: 10px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        form{
+            width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            div{
+            }
+            .typeIt{
+                margin: 20px;
+                input{
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    width: 200px;
+                    height: 30px;
+                    font-size: 20px;
+                }
+            }
+            .amount{
+                margin-bottom: 5px;
+                select{
+                    width: 200px;
+                    text-align: center;
+                    option{
+
+                    }
+                }
+            }
+            .buttonTypeIt{
+                margin-bottom: 20px;
+                input{
+                    width: 200px;
+                    text-align: center;      
+                }
+            }
+            button{
+                user-select: none;
+                width: 150px;
+                height: 35px;
+                border: none;
+                border-radius: 5px;
+                font-weight: 500;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-size: 18px;
+                background-color: $corbutton;
+                color: white;
+                &:hover{
+                   opacity: .8;
+                }
+            }
+        }
+        .config{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            .secNumber{
+                text-align: center;
+                background-color: rgba(255,255,255,.8);
+            }
+        }
+        .preset{
+            user-select: none;
+            margin-top: 20px;
+            justify-content: center;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            gap: 10px 5px;
+            button{
+                width: 60px;
+                height: 25px;
+                border: none;
+                cursor: pointer;
+                border-radius: 3px;
+                &:hover{
+                    opacity: .8;
+                }
+                font-weight: 600;
+                font-size: 16px;
+            }
+        }
+        .credits{
+            position: absolute;
+            bottom: 0;
+            flex-direction: column;
+            text-align: center;
+            .name{
+                font-size: 15px;
+                font-weight: 300;
+                color: $corspan;
+                margin: 0;
+                padding: 0;
+            }
+            .version{
+                font-weight: 300;
+                opacity: .6;
+                font-size: 12px;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+    .main{
+        user-select: none;
+        width: calc(100% - 350px);
+        background-color: white;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        .master{
+            width: 500px;
+            height: 250px;
+            border: solid 5px black;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .inffo{
+                height: 80%;
+                width: 100%;
+                //background-color: red;
+                .rotaPrint{
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    span{
+                        height: 80px;
+                        width: 100%;
+                        text-align: center;
+                        color: black;
+                        font-size: 80px;
+                        font-weight: 800;
+                    }
+                }
+            }
+            svg{
+                width: 80%;
+                //background-color: red;
+            }
+        }
+    }
+    .mainImpression{
+        display: none;
+        width: 50mm;
+        height: 25mm;
+        background-color: rgb(255, 255, 255);
+        .master{
+            border: solid 2px black;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            .inffo{
+                height: 60%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                .rotaPrint{
+                    span{
+                        font-size: 25px;
+                        font-weight: 700;
+                        color: black;
+                    }
+                }
+            }
+            #codBarrasImpression{
+                width: 100%;
+                height: 40%;
+            }
+        }
+    }
+}
+
+@media print {
+    .nav {
+        display: none;
+    }
+    .main{
+        display: none;
+    }
+    .mainImpression {
+        display: flex !important;
+    }
+    @page {
+        size: 100mm 50mm;
+        margin: 0;
+    }
+}

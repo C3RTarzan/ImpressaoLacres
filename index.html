@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Impressao de Lacres</title>
+        <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+        <link rel="stylesheet" href="./assets/css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+        <link rel="icon" href="./assets/icon/impressao.ico" type="image/x-icon">
+    </head>
+    <body>
+        
+        <div class="nav">
+            <div class="config">
+                <form action="" onsubmit="updateNumber()">
+                    <input class="secNumber" type="number">
+                </form>
+            </div>
+            <span>Impressão de Lacre</span>
+            <form action="" onsubmit="return false;">
+                <div class="typeIt">
+                    <input type="text" oninput="sizeLimit(this)" maxlength="4" autocomplete="off" id="Rota" placeholder="Rota">
+                </div>
+                <div class="amount">
+                    <select onchange="foco()">
+                        <option value="1">Imprimir 1</option>
+                        <option value="2">Imprimir 2</option>
+                        <option value="3">Imprimir 3</option>
+                        <option value="4">Imprimir 4</option>
+                        <option value="5">Imprimir 5</option>
+                        <option value="6">Imprimir 6</option>
+                        <option value="7">Imprimir 7</option>
+                        <option value="8">Imprimir 8</option>
+                        <option value="9">Imprimir 9</option>
+                        <option value="10">Imprimir 10</option>
+                    </select>
+                </div>
+                <div class="buttonTypeIt">
+                    <input type="number" class="amonutInput" placeholder="Outos valores">
+                </div>
+                <button onclick="main()">Imprimir</button>
+            </form>
+
+            <div class="preset">
+                <button onclick="preset('BSI')">BSI</button>
+                <button onclick="preset('RZO')">RZO</button>
+                <button onclick="preset('SSA')">SSA</button>
+                <button onclick="preset('NTA')">NTA</button>
+                <button onclick="preset('FEK')">FEK</button>
+                <button onclick="preset('VIX')">VIX</button>
+                <button onclick="preset('ENP')">ENP</button>
+                <button onclick="preset('RZS')">RZS</button>
+                <button onclick="preset('RRU')">RRU</button>
+                <button onclick="preset('JPS')">JPS</button>
+                <button onclick="preset('CER')">CER</button>
+                <button onclick="preset('RIO')">RIO</button>
+                <button onclick="preset('PTK')">PTK</button>
+                <button onclick="preset('SGI')">SGI</button>
+                <button onclick="preset('REK')">REK</button>
+                <button onclick="preset('JPA')">JPA</button>
+                <button onclick="preset('AJU')">AJU</button>
+                <button onclick="preset('MAC')">MAC</button>
+                <button onclick="preset('RZN')">RZN</button>
+                <button onclick="preset('VDQ')">VDQ</button>
+                <button onclick="preset('PRN')">PRN</button>
+                <button onclick="preset('ITN')">ITN</button>
+                <button onclick="preset('JZN')">JZN</button>
+                <button onclick="preset('BHX')">BHX</button>
+                <button onclick="preset('BHI')">BHI</button>
+                <button onclick="preset('BHZ')">BHZ</button>
+                <button onclick="preset('BSB')">BSB</button>
+                <button onclick="preset('FOR')">FOR</button>
+            </div>
+
+            <div class="credits">
+                <a class="name" href="https://github.com/C3RTarzan/ImpressaoLacres">@PinkUppers</a>
+                <span class="version">v1.0</span>
+            </div>
+        </div>
+        <div class="main">
+            <div class="master">
+                <div class="inffo">
+                    <div class="rotaPrint">
+                        <span></span>
+                    </div>
+                </div>
+                <svg id="codBarras"></svg>
+            </div>
+        </div>
+
+        <div class="mainImpression">
+            <div class="master">
+                <div class="inffo">
+                    <div class="rotaPrint">
+                        <span></span>
+                    </div>
+                </div>
+                <svg id="codBarrasImpression"></svg>
+            </div>
+        </div>
+    </body>
+    <script src="./scripts/index.js"></script>
+</html>
